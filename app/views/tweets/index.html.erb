@@ -91,15 +91,17 @@
                       <% @tweets.each do |tweet| %>
                         <li <%= cycle("class=timeline-inverted", "")%> >
                             <div class="timeline-image">
-                                <img src="tweet.svg" alt="Tweet" height="60px">
+                              <a href=<%= tweet.url %> >
+                                <img src="tweet.svg" alt="Tweet" height="60px"></a>
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">@Opternative</h4>
+                                    <h4>@Opternative:</h4>
+                                    <h4 class="subheading"><%=tweet.created_at.strftime("%F at %I:%M%p") %></h4>
+                                    
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"><%= tweet.text %></p>
+                                    <p class="text-muted"><%= auto_link(tweet.text).html_safe %></p>
                                 </div>
                             </div>
                         </li>

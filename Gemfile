@@ -11,6 +11,8 @@ gem 'jbuilder',       '2.1.3'
 gem 'twitter',        '5.11.0'
 gem 'pg',             '0.17.1'
 gem 'sdoc',           '0.4.0', group: :doc
+gem 'twitter-text',   '1.9.2'
+# gem 'rails_autolink', '1.1.6'
 gem 'dotenv-rails'
 
 group :development do
