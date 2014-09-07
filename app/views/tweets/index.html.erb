@@ -28,7 +28,6 @@
 </head>
 
 <body id="page-top" class="index">
-
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -84,6 +83,23 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">The Tweets</h2>
                 </div>
+              <div class="row">
+              <div class="col-sm-2">
+              </div>
+              <div class="col-sm-2">
+                <%= link_to "Last 25", {action: "index", kind: "last"}, {class: 'btn btn-la'} %>
+              </div>
+              <div class="col-sm-2">
+                <%= link_to "Only Recent", {action: "index", kind: "recent"}, {class: 'btn btn-la'} %>
+              </div>
+              <div class="col-sm-3">
+                <%= link_to 'Others are saying...', {action: "index", kind: "others"}, {class: 'btn btn-la'} %>
+              </div>
+              <div class="col-sm-2">
+                <%= link_to 'Get me Links', {action: "index", kind: "links"}, {class: 'btn btn-la'} %>
+              </div>
+            </div>
+          </br>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -96,7 +112,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>@Opternative:</h4>
+                                    <h4>@ <%=tweet.user.name%></h4>
                                     <h4 class="subheading"><%=tweet.created_at.strftime("%F at %I:%M%p") %></h4>
                                     
                                 </div>
